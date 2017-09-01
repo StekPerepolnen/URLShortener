@@ -28,7 +28,6 @@ export class UrlService {
 
     handleError(error: Response) {
         console.error(error);
-
         return Observable.throw(error);
     }
 }

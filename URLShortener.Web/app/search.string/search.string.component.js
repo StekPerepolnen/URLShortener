@@ -18,12 +18,8 @@ var SearchStringComponent = (function () {
         this.shortenUrlButtonClicked = new core_1.EventEmitter();
     }
     SearchStringComponent.prototype.onClick = function () {
-        console.log("onClickl");
         this.shortenUrlButtonClicked.emit(this.url);
         this.url = '';
-    };
-    SearchStringComponent.prototype.ngOnChanges = function () {
-        console.log('onChanges');
     };
     __decorate([
         core_1.Output(),
