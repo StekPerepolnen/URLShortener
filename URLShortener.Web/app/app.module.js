@@ -23,7 +23,7 @@ var url_shortener_component_1 = require("./url.shortener/url.shortener.component
 var appRoutes = [
     { path: "home", component: home_component_1.HomeComponent },
     { path: "catalogue", component: catalogue_component_1.CatalogueComponent },
-    { path: "**", component: home_component_1.HomeComponent }
+    { path: "**", redirectTo: '/home', pathMatch: 'full' }
 ];
 var AppModule = (function () {
     function AppModule() {

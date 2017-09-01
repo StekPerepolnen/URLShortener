@@ -17,7 +17,7 @@ import { UrlShortenerComponent } from './url.shortener/url.shortener.component';
 const appRoutes: Routes = [
     { path: "home", component: HomeComponent },
     { path: "catalogue", component: CatalogueComponent },
-    { path: "**", component: HomeComponent }
+    { path: '', redirectTo: '/home', pathMatch: 'full' }
 ]
 
 @NgModule({
