@@ -1,0 +1,6 @@
+﻿<div>
+    <search-string (shortenUrlButtonClicked)="shortenUrl($event)">...</search-string>
+    <div *ngIf="shortUrl">
+        <shortener-answer [shortUrl]="shortUrl">...</shortener-answer>
+    </div>
+</div>
