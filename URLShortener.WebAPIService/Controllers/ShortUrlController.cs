@@ -10,6 +10,13 @@ namespace URLShortener.WebAPIService.Controllers
 {
     public class ShortUrlController : BaseApiController
     {
+        public string Get(string url)
+        {
+            while ((url = Uri.UnescapeDataString(url)) != url)
+                ;
+            return DataProvider.GetShortUrl(url);
+        }
+
         public string Post(string url)
         {
             return DataProvider.GetShortUrl(url);

@@ -19,16 +19,17 @@ var UrlService = (function () {
         this._http = _http;
     }
     UrlService.prototype.getUrlsInfo = function () {
-        return this._http.get("http://localhost:38938/api/UrlsInfo")
+        return this._http.get("http://92.63.107.111:38938/api/UrlsInfo")
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
     UrlService.prototype.getShortUrl = function (url) {
+        console.log(encodeURIComponent(url));
         var params = new http_1.URLSearchParams();
-        params.append('url', url);
-        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        var options = new http_1.RequestOptions({ search: params, headers: headers });
-        return this._http.post("http://localhost:38938/api/ShortUrl", url, options)
+        params.append('url', encodeURIComponent(url));
+        //let headers = new Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ search: params });
+        return this._http.get("http://92.63.107.111:38938/api/ShortUrl", options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };

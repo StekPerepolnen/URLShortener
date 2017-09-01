@@ -11,17 +11,18 @@ export class UrlService {
     
     }
     getUrlsInfo(): Observable<IUrlInfo[]> {
-        return this._http.get("http://localhost:38938/api/UrlsInfo")
+        return this._http.get("http://92.63.107.111:38938/api/UrlsInfo")
             .map((response: Response) => <IUrlInfo[]>response.json())
             .catch(this.handleError);
     }
 
     getShortUrl(url: string): Observable<string> {
+        console.log(encodeURIComponent(url));
         let params: URLSearchParams = new URLSearchParams();
-        params.append('url', url);
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ search: params, headers: headers });
-        return this._http.post("http://localhost:38938/api/ShortUrl", url, options)
+        params.append('url', encodeURIComponent(url));
+        //let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ search: params });
+        return this._http.get("http://92.63.107.111:38938/api/ShortUrl", options)
             .map((response: Response) => response.json())
             .catch(this.handleError);
     }
