@@ -14,7 +14,7 @@ var http_1 = require("@angular/http");
 var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
-var UrlService = (function () {
+var UrlService = /** @class */ (function () {
     function UrlService(_http) {
         this._http = _http;
     }
@@ -24,12 +24,11 @@ var UrlService = (function () {
             .catch(this.handleError);
     };
     UrlService.prototype.getShortUrl = function (url) {
-        console.log(encodeURIComponent(url));
         var params = new http_1.URLSearchParams();
         params.append('url', encodeURIComponent(url));
         //let headers = new Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ search: params });
-        return this._http.get("http://92.63.107.111:38938/api/ShortUrl", options)
+        return this._http.post("http://92.63.107.111:38938/api/ShortUrl", url, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };

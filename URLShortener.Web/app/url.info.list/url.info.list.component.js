@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var url_service_1 = require("../url.service/url.service");
-var UrlInfoListComponent = (function () {
+var UrlInfoListComponent = /** @class */ (function () {
     function UrlInfoListComponent(_urlService) {
         this._urlService = _urlService;
     }

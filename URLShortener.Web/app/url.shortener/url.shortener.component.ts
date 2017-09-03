@@ -1,4 +1,4 @@
-﻿import { Component, OnChanges } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { UrlService } from '../url.service/url.service'
 
 @Component({
@@ -18,7 +18,5 @@ export class UrlShortenerComponent {
     shortenUrl(url: string): void {
         this.originalUrl = url;
         this._urlService.getShortUrl(url).subscribe((shortUrl) => this.shortUrl = shortUrl);
-        console.log(this.originalUrl);
-        console.log(this.shortUrl);
     }
 }

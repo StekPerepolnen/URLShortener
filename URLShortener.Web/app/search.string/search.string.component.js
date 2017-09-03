@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var SearchStringComponent = (function () {
+var SearchStringComponent = /** @class */ (function () {
     function SearchStringComponent() {
         this.placeholderText = 'Your original URL here';
         this.buttonText = 'Shorten URL';

@@ -13,18 +13,5 @@ namespace URLShortener.Web.Controllers
         {
             return View();
         }
-
-        public ActionResult Catalogue()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public JsonResult GetShortUrl(string url)
-        {
-            var shortUrl = new ShortUrlModel() { Name = "Hello World" };
-            return Json(shortUrl);
-        }
     }
 }

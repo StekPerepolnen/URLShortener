@@ -23,9 +23,9 @@ var url_shortener_component_1 = require("./url.shortener/url.shortener.component
 var appRoutes = [
     { path: "home", component: home_component_1.HomeComponent },
     { path: "catalogue", component: catalogue_component_1.CatalogueComponent },
-    { path: "**", redirectTo: '/home', pathMatch: 'full' }
+    { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
-var AppModule = (function () {
+var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([

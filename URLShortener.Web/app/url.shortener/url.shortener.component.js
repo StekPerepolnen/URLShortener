@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var url_service_1 = require("../url.service/url.service");
-var UrlShortenerComponent = (function () {
+var UrlShortenerComponent = /** @class */ (function () {
     function UrlShortenerComponent(_urlService) {
         this._urlService = _urlService;
         this.originalUrl = '';
@@ -22,8 +22,6 @@ var UrlShortenerComponent = (function () {
         var _this = this;
         this.originalUrl = url;
         this._urlService.getShortUrl(url).subscribe(function (shortUrl) { return _this.shortUrl = shortUrl; });
-        console.log(this.originalUrl);
-        console.log(this.shortUrl);
     };
     UrlShortenerComponent = __decorate([
         core_1.Component({
