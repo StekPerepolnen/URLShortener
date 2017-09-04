@@ -75,14 +75,14 @@
     <Compile Include="DataProvider\IShortUrlDataProvider.cs" />
     <Compile Include="UrlKeyGenerator\IUrlKeyGenerator.cs" />
     <Compile Include="UrlKeyGenerator\IUrlKeyGeneratorBuilder.cs" />
-    <Compile Include="IUrlShortener.cs" />
-    <Compile Include="IUrlShortenerBuilder.cs" />
+    <Compile Include="UrlShortener\IUrlShortener.cs" />
+    <Compile Include="UrlShortener\IUrlShortenerTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UrlKeyGenerator\UrlKeyGenerator.cs" />
     <Compile Include="UrlKeyGenerator\UrlKeyGeneratorBuilder.cs" />
     <Compile Include="DataProvider\ShortUrlDataProvider.cs" />
-    <Compile Include="UrlShortenerTemplate.cs" />
-    <Compile Include="UrlShortener.cs" />
+    <Compile Include="UrlShortener\UrlShortenerTemplate.cs" />
+    <Compile Include="UrlShortener\UrlShortener.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

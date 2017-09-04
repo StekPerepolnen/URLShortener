@@ -8,9 +8,11 @@ namespace URLShortener.Utils
 {
     public interface IUrlKeyGeneratorBuilder
     {
-        IUrlKeyGeneratorBuilder StartWithLength(int length);
+        IUrlKeyGeneratorBuilder SetAlphabet(string abc);
 
-        IUrlKeyGeneratorBuilder StartWithSeed(string code);
+        IUrlKeyGeneratorBuilder MinLength(int length);
+
+        IUrlKeyGeneratorBuilder PassedKey(string key);
 
         IUrlKeyGenerator Build();
     }

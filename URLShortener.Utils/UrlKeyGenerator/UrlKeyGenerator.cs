@@ -5,21 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 namespace URLShortener.Utils
 {
-    public class UrlKeyGenerator : IUrlKeyGenerator
+    public partial class UrlKeyGenerator : IUrlKeyGenerator
     {
-        public static readonly string abc = "abcdefghijklmnopqrstuvwxyz0123456789";
-        public static readonly int abcLength = abc.Length;
-        
-        private string _lastCode = null;
+        private string _abc = "abcdefghijklmnopqrstuvwxyz0123456789";
+        private string _key = null;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="seed">The code to start the generation</param>
-        /// <param name="codeLength">Start code length</param>
-        public UrlKeyGenerator(string seed, int codeLength)
+        private UrlKeyGenerator()
         {
-            _lastCode = seed != null && seed.Length >= codeLength ? seed : GetFirstCode(codeLength);
         }
 
         /// <summary>
@@ -28,40 +20,42 @@ namespace URLShortener.Utils
         /// <returns></returns>
         public string Next()
         {
-            var next = _lastCode.ToList();
+            var selectedKey = _key;
+            _key = GenerateNextKey(_key);
+            return selectedKey;
+        }
+
+        private string GenerateNextKey(string key)
+        {
+            var next = key.ToList();
 
             var isPositionOverflow = true;
-            var index = _lastCode.Length - 1;
+            var index = key.Length - 1;
 
             while (index >= 0 && isPositionOverflow)
             {
 
-                var abcIndex = abc.IndexOf(next[index]) + 1;
+                var abcIndex = _abc.IndexOf(next[index]) + 1;
 
-                isPositionOverflow = abcIndex >= abcLength;
+                isPositionOverflow = abcIndex >= _abc.Length || abcIndex < 0;
                 if (isPositionOverflow)
                     abcIndex = 0;
-                next[index] = abc[abcIndex];
+                next[index] = _abc[abcIndex];
 
                 index--;
             }
 
             if (index < 0 && isPositionOverflow)
             {
-                next.Insert(0, abc[0]);
+                next.Insert(0, _abc[0]);
             }
 
-            _lastCode = String.Concat(next);
-            return _lastCode;
+            return String.Concat(next);
         }
 
-        private string GetFirstCode(int firstCodeLength)
+        public static UrlKeyGeneratorBuilder Create()
         {
-            var next = "";
-            for (int i = 0; i < firstCodeLength - 1; i++)
-                next += abc.Last();
-            
-            return next;
+            return new UrlKeyGeneratorBuilder();
         }
     }
 }

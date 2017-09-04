@@ -7,17 +7,17 @@ using URLShortener.DAOService;
 
 namespace URLShortener.Utils
 {
-    public class UrlShortenerTemplate: IUrlShortenerCreator
+    public class UrlShortenerTemplate: IUrlShortenerTemplate
     {
         public IUrlShortener Create()
         {
             var repo = new ShortUrlRepository();
             var dataProvider = new ShortUrlDataProvider(repo);
-            var strategy = (new UrlKeyGeneratorBuilder())
-                .StartWithSeed(dataProvider.GetLatestKey())
-                .StartWithLength(4)
+            var generator = UrlKeyGenerator.Create()
+                .MinLength(4)
+                .PassedKey(dataProvider.GetLatestKey())
                 .Build();
-            var urlShortener = new UrlShortener(dataProvider, strategy);
+            var urlShortener = new UrlShortener(dataProvider, generator);
 
             return urlShortener;
         }

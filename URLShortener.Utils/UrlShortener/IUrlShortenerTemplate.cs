@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace URLShortener.Utils
 {
-    public interface IUrlShortenerCreator
+    public interface IUrlShortenerTemplate
     {
         IUrlShortener Create();
     }
