@@ -2,3 +2,5 @@
 Регистрации не предусмотрено.
 
 ASP.NET, AngularJs 2, TypeScript, Bootstrap, MSSQL, EF
+
+посмотреть можно здесь http://92.63.107.111:46274/
