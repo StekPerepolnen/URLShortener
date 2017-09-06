@@ -9,6 +9,7 @@
 * npm 5.3.0
 * TypeScript 2.5.2.0
 <hr>
+
 **Назначение проектов**
 
 * URLShortener.Web - проект сайта
