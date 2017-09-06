@@ -12,14 +12,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var Observable_1 = require("rxjs/Observable");
+var app_config_1 = require("../app.config");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
 var UrlService = /** @class */ (function () {
-    function UrlService(_http) {
+    function UrlService(_http, config) {
         this._http = _http;
+        this.config = config;
     }
     UrlService.prototype.getUrlsInfo = function () {
-        return this._http.get("http://92.63.107.111:38938/api/UrlsInfo")
+        return this._http.get(String(this.config.getConfig('UrlsInfoApi')))
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -28,7 +30,7 @@ var UrlService = /** @class */ (function () {
         params.append('url', encodeURIComponent(url));
         //let headers = new Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ search: params });
-        return this._http.post("http://92.63.107.111:38938/api/ShortUrl", url, options)
+        return this._http.post(String(this.config.getConfig('ShortUrlApi')), url, options)
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
@@ -38,7 +40,7 @@ var UrlService = /** @class */ (function () {
     };
     UrlService = __decorate([
         core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.Http])
+        __metadata("design:paramtypes", [http_1.Http, app_config_1.AppConfig])
     ], UrlService);
     return UrlService;
 }());

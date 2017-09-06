@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { APP_INITIALIZER } from '@angular/core';
+import { AppConfig } from './app.config';
 
 import { AppComponent } from './app.component';
 import { SearchStringComponent } from './search.string/search.string.component';
@@ -23,6 +25,10 @@ const appRoutes: Routes = [
 @NgModule({
     imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes)],
     declarations: [AppComponent, SearchStringComponent, ShortenerAnswerComponent, NavmenuComponent, FooterComponent, HomeComponent, CatalogueComponent, UrlInfoListComponent, UrlShortenerComponent],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [
+        AppConfig,
+        { provide: APP_INITIALIZER, useFactory: (config: AppConfig) => () => config.load(), deps: [AppConfig], multi: true }
+    ]
 })
 export class AppModule { }

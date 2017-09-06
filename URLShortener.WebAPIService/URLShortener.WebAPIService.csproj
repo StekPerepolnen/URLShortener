@@ -97,6 +97,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DbUrl.mdf" />
+    <Content Include="App_Data\DbUrl_log.ldf">
+      <DependentUpon>DbUrl.mdf</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -125,9 +129,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\URLShortener.DAOService\URLShortener.DAOService.csproj">
       <Project>{65db3d81-a502-4153-84a7-a9a115f36d0f}</Project>

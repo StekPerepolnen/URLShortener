@@ -11,6 +11,8 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var router_1 = require("@angular/router");
+var core_2 = require("@angular/core");
+var app_config_1 = require("./app.config");
 var app_component_1 = require("./app.component");
 var search_string_component_1 = require("./search.string/search.string.component");
 var shortener_answer_component_1 = require("./shortener.answer/shortener.answer.component");
@@ -32,7 +34,11 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, router_1.RouterModule.forRoot(appRoutes)],
             declarations: [app_component_1.AppComponent, search_string_component_1.SearchStringComponent, shortener_answer_component_1.ShortenerAnswerComponent, navmenu_component_1.NavmenuComponent, footer_component_1.FooterComponent, home_component_1.HomeComponent, catalogue_component_1.CatalogueComponent, url_info_list_component_1.UrlInfoListComponent, url_shortener_component_1.UrlShortenerComponent],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent],
+            providers: [
+                app_config_1.AppConfig,
+                { provide: core_2.APP_INITIALIZER, useFactory: function (config) { return function () { return config.load(); }; }, deps: [app_config_1.AppConfig], multi: true }
+            ]
         })
     ], AppModule);
     return AppModule;

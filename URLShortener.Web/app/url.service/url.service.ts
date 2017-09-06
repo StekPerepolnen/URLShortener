@@ -2,16 +2,17 @@
 import { Http, Response, RequestOptions, URLSearchParams, Headers } from '@angular/http'
 import { IUrlInfo } from '../interfaces/url.info'
 import { Observable } from 'rxjs/Observable'
+import { AppConfig } from '../app.config';
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 
 @Injectable()
 export class UrlService {
-    constructor(private _http: Http) {
+    constructor(private _http: Http, private config: AppConfig) {
     
     }
     getUrlsInfo(): Observable<IUrlInfo[]> {
-        return this._http.get("http://92.63.107.111:38938/api/UrlsInfo")
+        return this._http.get(String(this.config.getConfig('UrlsInfoApi')))
             .map((response: Response) => <IUrlInfo[]>response.json())
             .catch(this.handleError);
     }
@@ -21,7 +22,7 @@ export class UrlService {
         params.append('url', encodeURIComponent(url));
         //let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ search: params });
-        return this._http.post("http://92.63.107.111:38938/api/ShortUrl", url, options)
+        return this._http.post(String(this.config.getConfig('ShortUrlApi')), url, options)
             .map((response: Response) => response.json())
             .catch(this.handleError);
     }

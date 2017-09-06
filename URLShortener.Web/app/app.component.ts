@@ -6,6 +6,4 @@ import { Component, OnChanges } from '@angular/core';
     templateUrl: 'app.component.html',
 })
 export class AppComponent  {
-    title: string = 'Simplify your links';
-    showAnswer: boolean = true;
 }

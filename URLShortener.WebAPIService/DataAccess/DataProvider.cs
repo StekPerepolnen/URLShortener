@@ -43,11 +43,8 @@ namespace URLShortener.WebAPIService.DataAccess
         
         public string GetShortUrl(string url)
         {
-            if (url.StartsWith("http://"))
-                url = url.Replace("http://", "");
-            if (url.StartsWith("https://"))
-                url = url.Replace("https://", "");
-            url = "https://" + url;
+            if (!url.StartsWith("http"))
+                url = "https://" + url;
             return BaseUrl + UrlShortener.Encode(url);
         }
 
