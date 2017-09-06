@@ -4,11 +4,13 @@
 Регистрации не предусмотрено.
 <hr>
 Технологии ASP.NET MVC, Angular 2, TypeScript, Bootstrap, MSSQL, EF
+
 Microsoft VS 2015 Update 3
 npm 5.3.0
 TypeScript 2.5.2.0
 <hr>
 проект сайта              - URLShortener.Web;
+
 api проекта               - URLShortener.WebAPIService;
 конвертация строки url    - URLShortener.Utils;
 доступ к бд               - URLShortener.DAOService;
