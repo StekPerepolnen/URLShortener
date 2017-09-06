@@ -1,6 +1,4 @@
 {
-  "host": "localhost",
   "UrlsInfoApi": "http://localhost:38938/api/UrlsInfo",
-  "ShortUrlApi": "http://localhost:38938/api/ShortUrl",
-  "hello": "Hello World"
+  "ShortUrlApi": "http://localhost:38938/api/ShortUrl"
 }
