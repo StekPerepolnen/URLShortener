@@ -4,9 +4,9 @@
 Регистрации не предусмотрено.
 <hr>
 Технологии ASP.NET MVC, Angular 2, TypeScript, Bootstrap, MSSQL, EF
-*Microsoft VS 2015 Update 3
-*npm 5.3.0
-*TypeScript 2.5.2.0
+* Microsoft VS 2015 Update 3
+* npm 5.3.0
+* TypeScript 2.5.2.0
 <hr>
 * URLShortener.Web - проект сайта
 * URLShortener.WebAPIService - api проекта
