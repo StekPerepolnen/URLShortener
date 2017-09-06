@@ -30,4 +30,5 @@ ASP.NET MVC, Angular 2, TypeScript, Bootstrap, MSSQL, EF
 
 При разворачивании сайта на IIS, строки обращения к api можно поменять в файле /URLShortener.Web/config.development.json
 <hr>
+
 [посмотреть можно здесь](http://92.63.107.111:46274/)
