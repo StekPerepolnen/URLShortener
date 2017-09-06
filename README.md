@@ -10,6 +10,7 @@ ASP.NET MVC, Angular 2, TypeScript, Bootstrap, MSSQL, EF
 
 * Microsoft VS 2015 Update 3
 * npm 5.3.0
+* node.js v6.11.2
 * TypeScript 2.5.2.0
 <hr>
 
@@ -26,6 +27,7 @@ ASP.NET MVC, Angular 2, TypeScript, Bootstrap, MSSQL, EF
 * Запустить проект URLShortener.Web
 <hr>
 Сама БД находится в URLShortener.WebAPIService\App_Data\DbUrl.mdf, поэтому нет необходимости создавать бд самостоятельно.
+
 При разворачивании сайта на IIS, строки обращения к api можно поменять в файле /URLShortener.Web/config.development.json
 <hr>
 [посмотреть можно здесь](http://92.63.107.111:46274/)
