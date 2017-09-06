@@ -2,6 +2,9 @@
 Регистрации не предусмотрено.
 
 Технологии ASP.NET MVC, Angular 2, TypeScript, Bootstrap, MSSQL, EF
+Microsoft VS 2015 Update 3
+npm 5.3.0
+TypeScript 2.5.2.0
 
 проект сайта              - URLShortener.Web;
 api проекта               - URLShortener.WebAPIService;
@@ -10,8 +13,8 @@ api проекта               - URLShortener.WebAPIService;
 
 Перед запуском в студии, загрузить необходимыее пакеты.
 package.json -> Restore Packages.
-собрать проект URLShortener.Web и URLShortener.WebAPIService.
-Можно запускать проект.
+Собрать все решение.
+Запустить проект URLShortener.Web.
 
 Сама БД находится в URLShortener.WebAPIService\App_Data\DbUrl.mdf, поэтому нет необходимости создавать бд самостоятельно. 
 При разворачивании сайта на IIS, строки обращения к api можно поменять в файле /URLShortener.Web/config.development.json
