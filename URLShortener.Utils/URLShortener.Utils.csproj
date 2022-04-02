@@ -79,7 +79,7 @@
     <Compile Include="UrlShortener\IUrlShortenerTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UrlKeyGenerator\UrlKeyGenerator.cs" />
-    <Compile Include="UrlKeyGenerator\UrlKeyGeneratorBuilder.cs" />
+    <Compile Include="UrlKeyGenerator\Builder.cs" />
     <Compile Include="DataProvider\ShortUrlDataProvider.cs" />
     <Compile Include="UrlShortener\UrlShortenerTemplate.cs" />
     <Compile Include="UrlShortener\UrlShortener.cs" />

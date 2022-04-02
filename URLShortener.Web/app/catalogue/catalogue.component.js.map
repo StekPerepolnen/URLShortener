@@ -1,1 +1,0 @@
-{"version":3,"file":"catalogue.component.js","sourceRoot":"","sources":["catalogue.component.ts"],"names":[],"mappings":";;;;;;;;AAAA,sCAA0C;AAY1C;IAAA;IACA,CAAC;IADY,kBAAkB;QAV9B,gBAAS,CAAC;YACP,QAAQ,EAAE,MAAM,CAAC,EAAE;YACnB,QAAQ,EAAE,gBAAgB;YAC1B,WAAW,EAAE,0BAA0B;SAK1C,CAAC;OAEW,kBAAkB,CAC9B;IAAD,yBAAC;CAAA,AADD,IACC;AADY,gDAAkB"}
