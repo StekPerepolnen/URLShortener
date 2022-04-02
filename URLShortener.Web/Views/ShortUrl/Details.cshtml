@@ -1,14 +1,8 @@
 ﻿@model URLShortener.Web.Models.ShortUrlModel
 
-@{
-    ViewData["Title"] = "Details";
-}
-
-<h1>Details</h1>
+<h1>Title</h1>
 
 <div>
-    <h4>ShortUrlModel</h4>
-    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Origin)
@@ -26,5 +20,5 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-controller="Home" asp-action="Index">Back</a>
 </div>

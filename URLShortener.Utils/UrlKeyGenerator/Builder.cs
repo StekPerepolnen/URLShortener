@@ -8,11 +8,11 @@ namespace URLShortener.Utils
 {
     public partial class UrlKeyGenerator
     {
-        public class UrlKeyGeneratorBuilder : IUrlKeyGeneratorBuilder
+        public class Builder : IUrlKeyGeneratorBuilder
         {
             private readonly UrlKeyGenerator _generator;
 
-            public UrlKeyGeneratorBuilder()
+            public Builder()
             {
                 _generator = new UrlKeyGenerator();
             }

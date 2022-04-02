@@ -40,7 +40,7 @@ namespace URLShortener.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Original")] ShortenUrlModel addUrlModel)
+        public async Task<IActionResult> Create([Bind("Origin")] ShortenUrlModel addUrlModel)
         {
             if (ModelState.IsValid)
             {
@@ -52,7 +52,8 @@ namespace URLShortener.Web.Controllers
                 };
                 _context.Add(shortUrlModel);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Redirect("~/ShortUrl/Details/" + shortUrlModel.Id);
+                //return RedirectToAction(nameof(Index));
             }
             return View(addUrlModel);
         }

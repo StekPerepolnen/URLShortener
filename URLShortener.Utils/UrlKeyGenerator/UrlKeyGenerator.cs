@@ -7,11 +7,28 @@ namespace URLShortener.Utils
 {
     public partial class UrlKeyGenerator : IUrlKeyGenerator
     {
-        private string _abc = "abcdefghijklmnopqrstuvwxyz0123456789";
-        private string _key = null;
+        private string _abc;
+        private string _key;
 
-        public UrlKeyGenerator()
+        private const string DEFAULT_ALPHABET = "abcdefghijklmnopqrstuvwxyz0123456789";
+        private const int DEFAULT_LENGTH = 6;
+
+        public UrlKeyGenerator() : this(DEFAULT_ALPHABET, DEFAULT_LENGTH) { }
+
+        public UrlKeyGenerator(int length) : this(DEFAULT_ALPHABET, length) { }
+
+        public UrlKeyGenerator(string alphabet, int length)
         {
+            _abc = alphabet;
+            _key = GetDefaultKey(length);
+        }
+
+        public UrlKeyGenerator(string key) : this(DEFAULT_ALPHABET, key) { }
+
+        public UrlKeyGenerator(string alphabet, string key)
+        {
+            _abc = alphabet;
+            _key = key;
         }
 
         /// <summary>
@@ -53,9 +70,18 @@ namespace URLShortener.Utils
             return String.Concat(next);
         }
 
-        public static UrlKeyGeneratorBuilder Create()
+        public static Builder Create()
         {
-            return new UrlKeyGeneratorBuilder();
+            return new Builder();
+        }
+
+        private string GetDefaultKey(int length)
+        {
+            var key = "";
+            for (int i = 0; i < length; i++)
+                key += _abc.First();
+
+            return key;
         }
     }
 }
