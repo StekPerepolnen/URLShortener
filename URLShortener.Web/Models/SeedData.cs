@@ -15,12 +15,12 @@ namespace URLShortener.Web.Models
                 serviceProvider.GetRequiredService<DbContextOptions<URLShortenerContext>>()))
             {
                 // Look for any movies.
-                if (context.ShortUrls.Any())
+                if (context.ShortUrlModel.Any())
                 {
                     return;   // DB has been seeded
                 }
 
-                context.ShortUrls.AddRange(
+                context.ShortUrlModel.AddRange(
                     new ShortUrlModel
                     {
                         Origin = "https://test.com",

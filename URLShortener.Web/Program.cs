@@ -2,11 +2,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using URLShortener.Web.Models;
 using URLShortener.Web.Data;
+using URLShortener.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<URLShortenerContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("URLShortenerContext")));
+builder.Services.AddSingleton<IUrlKeyGenerator, UrlKeyGenerator>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

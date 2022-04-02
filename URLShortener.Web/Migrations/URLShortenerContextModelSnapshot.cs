@@ -29,7 +29,7 @@ namespace URLShortener.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Original")
+                    b.Property<string>("Origin")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Short")

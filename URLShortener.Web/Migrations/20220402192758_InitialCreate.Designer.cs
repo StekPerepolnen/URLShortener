@@ -11,7 +11,7 @@ using URLShortener.Web.Data;
 namespace URLShortener.Web.Migrations
 {
     [DbContext(typeof(URLShortenerContext))]
-    [Migration("20220331110259_InitialCreate")]
+    [Migration("20220402192758_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,7 +31,7 @@ namespace URLShortener.Web.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Original")
+                    b.Property<string>("Origin")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Short")

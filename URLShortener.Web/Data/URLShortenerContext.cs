@@ -15,6 +15,6 @@ namespace URLShortener.Web.Data
         {
         }
 
-        public DbSet<URLShortener.Web.Models.ShortUrlModel> ShortUrls { get; set; }
+        public DbSet<ShortUrlModel> ShortUrlModel { get; set; }
     }
 }

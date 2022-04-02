@@ -14,7 +14,7 @@ namespace URLShortener.Web.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Original = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Origin = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Short = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>

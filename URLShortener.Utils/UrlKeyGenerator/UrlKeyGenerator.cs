@@ -10,7 +10,7 @@ namespace URLShortener.Utils
         private string _abc = "abcdefghijklmnopqrstuvwxyz0123456789";
         private string _key = null;
 
-        private UrlKeyGenerator()
+        public UrlKeyGenerator()
         {
         }
 

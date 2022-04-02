@@ -23,7 +23,7 @@ namespace URLShortener.Web.Controllers
         // GET: ShortUrlModels
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ShortUrls.ToListAsync());
+            return View(await _context.ShortUrlModel.ToListAsync());
         }
 
         // GET: ShortUrlModels/Details/5
@@ -34,7 +34,7 @@ namespace URLShortener.Web.Controllers
                 return NotFound();
             }
 
-            var shortUrlModel = await _context.ShortUrls
+            var shortUrlModel = await _context.ShortUrlModel
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (shortUrlModel == null)
             {
@@ -74,7 +74,7 @@ namespace URLShortener.Web.Controllers
                 return NotFound();
             }
 
-            var shortUrlModel = await _context.ShortUrls.FindAsync(id);
+            var shortUrlModel = await _context.ShortUrlModel.FindAsync(id);
             if (shortUrlModel == null)
             {
                 return NotFound();
@@ -125,7 +125,7 @@ namespace URLShortener.Web.Controllers
                 return NotFound();
             }
 
-            var shortUrlModel = await _context.ShortUrls
+            var shortUrlModel = await _context.ShortUrlModel
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (shortUrlModel == null)
             {
@@ -140,15 +140,15 @@ namespace URLShortener.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var shortUrlModel = await _context.ShortUrls.FindAsync(id);
-            _context.ShortUrls.Remove(shortUrlModel);
+            var shortUrlModel = await _context.ShortUrlModel.FindAsync(id);
+            _context.ShortUrlModel.Remove(shortUrlModel);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ShortUrlModelExists(int id)
         {
-            return _context.ShortUrls.Any(e => e.Id == id);
+            return _context.ShortUrlModel.Any(e => e.Id == id);
         }
     }
 }
