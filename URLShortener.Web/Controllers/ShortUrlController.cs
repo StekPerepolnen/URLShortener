@@ -17,6 +17,7 @@ namespace URLShortener.Web.Controllers
 
         public ShortUrlController(URLShortenerContext context)
         {
+            ViewData = ViewData;
             _context = context;
         }
 

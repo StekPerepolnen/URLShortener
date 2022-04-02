@@ -52,6 +52,8 @@ namespace URLShortener.Web.Controllers
                 };
                 _context.Add(shortUrlModel);
                 await _context.SaveChangesAsync();
+
+                TempData["success-message"] = "Success!";
                 return Redirect("~/ShortUrl/Details/" + shortUrlModel.Id);
                 //return RedirectToAction(nameof(Index));
             }
